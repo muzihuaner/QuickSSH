@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: 24 24 27;
+  --color-bg-alt: 30 30 34;
+  --color-surface: 39 39 42;
+  --color-border: 63 63 70;
+  --color-text: 229 231 235;
+  --color-text-muted: 148 163 184;
+  --color-accent: 59 130 246;
+  --color-accent-hover: 37 99 235;
+  --color-titlebar: 24 24 27;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+    'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: rgb(var(--color-bg));
+  color: rgb(var(--color-text));
+  user-select: none;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--color-border));
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--color-text-muted));
+}
+
+/* xterm 容器 */
+.xterm {
+  padding: 8px;
+  height: 100%;
+}
+.xterm-viewport {
+  background-color: transparent !important;
+}
+
+/* 可选中区域 */
+.selectable {
+  user-select: text;
+}
+
+/* 命令面板淡入 */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in {
+  animation: fade-in 0.12s ease-out;
+}
+
+/* 监控图表网格 */
+.monitor-grid {
+  background-image: linear-gradient(rgba(var(--color-border), 0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--color-border), 0.2) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* 无边框窗口拖拽区域 */
+.draggable-region {
+  -webkit-app-region: drag;
+}
+.no-drag {
+  -webkit-app-region: no-drag;
+}
