@@ -16,6 +16,7 @@ win:
   target:
     - nsis
   executableName: QuickSSH
+  icon: build/icon.png
 nsis:
   artifactName: ${name}-${version}-setup.${ext}
   shortcutName: ${productName}
@@ -25,10 +26,12 @@ mac:
   target:
     - dmg
   entitlements: null
+  icon: build/icon.png
   category: public.app-category.developer-tools
 linux:
   target:
     - AppImage
     - deb
   maintainer: QuickSSH
+  icon: build/icon.png
   category: Development

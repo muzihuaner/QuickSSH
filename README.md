@@ -39,40 +39,7 @@ QuickSSH 致力于打造一个真正的一体化运维工作台，将 **SSH、SF
 | 本地终端 | node-pty |
 | 状态管理 | Zustand |
 
-## 📦 项目结构
 
-```
-QuickSSH/
-├── src/
-│   ├── main/                # 主进程
-│   │   ├── index.ts         # 入口
-│   │   ├── window.ts        # 窗口管理
-│   │   ├── local-terminal.ts# 本地终端 (node-pty)
-│   │   ├── ssh/             # SSH 核心模块
-│   │   │   ├── manager.ts   #   会话管理器 (ssh2)
-│   │   │   ├── sftp.ts      #   SFTP 操作
-│   │   │   └── monitor.ts   #   资源监控
-│   │   ├── ipc/             # IPC 处理器
-│   │   └── store/           # 持久化存储
-│   │       ├── credentials.ts # 凭据保险箱 (safeStorage 加密)
-│   │       ├── commands.ts  #   自定义命令与历史
-│   │       └── themes.ts    #   主题包
-│   ├── preload/             # 预加载桥接层 (contextBridge)
-│   ├── renderer/            # 渲染进程 (React)
-│   │   └── src/
-│   │       ├── components/  # UI 组件
-│   │       │   ├── workbench/   # 标签页
-│   │       │   ├── terminal/    # 终端视图
-│   │       │   ├── sftp/        # 文件管理器
-│   │       │   ├── command/     # 命令面板
-│   │       │   ├── monitor/     # 监控图表
-│   │       │   ├── credentials/ # 凭据管理
-│   │       │   └── theme/       # 主题设置
-│   │       └── store/      # Zustand 状态
-│   └── shared/             # 主/渲染共享类型与 IPC 通道
-├── electron.vite.config.ts
-└── package.json
-```
 
 ## 🚀 快速开始
 
